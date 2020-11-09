@@ -1,0 +1,17 @@
+<h1>Result</h1>
+
+
+  <% case @answer 
+      when "not english" %>
+      <p class="result">Sorry but <strong><%= @word %></strong> does not seem to be an English word...</p>
+    <% when "in grid" %>
+      <p class="result"><strong>Congratulations!</strong>  <%= @word %> is a valid English word!</p>
+    <% when "not grid" %>
+      <p class="result">Sorry but <strong><%= @word %></strong> can't be built out of <%= @grid.join(", ") %></p>
+  <% end %>
+ 
+
+  <div id="link">
+    <%= link_to "Play again", "/new" %>
+  </div>
+
